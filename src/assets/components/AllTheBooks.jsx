@@ -5,25 +5,28 @@ import { Row, Col } from "react-bootstrap";
 
 function MyBooks() {
   return (
-    <Row className='mb-3'>
-        <Col className='text-center col-4'>
+    <Row className='mb-3 g-3'>
+        <Col className='text-center col-12'>
         <h1>La mia libreria:</h1>
+        </Col>
     {
        libriHorror.map((libro)=>{
         return (
+        <Col className="col-4">
             <Card>
-      <Card.Img variant="top" src={libro.img} />
-      <Card.Body>
-        <Card.Title>{libro.title}</Card.Title>
-        <Card.Text>
+            <Card.Img variant="top" src={libro.img} />
+            <Card.Body>
+            <Card.Title>{libro.title}</Card.Title>
+            <Card.Text>
           {libro.price}
         </Card.Text>
       </Card.Body>
     </Card>
+    </Col>
         )
        })
     }
-    </Col>
+    
     </Row>
   );
 }
