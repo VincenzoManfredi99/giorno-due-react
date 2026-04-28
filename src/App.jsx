@@ -13,12 +13,8 @@ function App() {
        </header>
        
        <main className="flex-grow-1">
-         <Container>
-           <Row className="mt-5">
-             <Col xs= {12} md={6}>
+         <Container>    
              <MyBooks />
-             </Col>
-           </Row>
          </Container>
        </main>
        <footer>

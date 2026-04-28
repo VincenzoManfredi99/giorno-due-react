@@ -1,28 +1,29 @@
-import Button from 'react-bootstrap/Button';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Card from 'react-bootstrap/Card';
 import libriHorror from '../data/horror.json'
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 function MyBooks() {
   return (
-    <Row>
+    <Row className='mb-3'>
+        <Col className='text-center col-4'>
+        <h1>La mia libreria:</h1>
     {
        libriHorror.map((libro)=>{
         return (
-            <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+            <Card>
+      <Card.Img variant="top" src={libro.img} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>{libro.title}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {libro.price}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
         )
        })
     }
+    </Col>
     </Row>
   );
 }
