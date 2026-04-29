@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Card from 'react-bootstrap/Card';
-import libriHorror from '../data/horror.json'
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
+import libriHorror from '../data/horror.json';
 
 function MyBooks() {
   return (
@@ -12,7 +11,7 @@ function MyBooks() {
     {
        libriHorror.map((libro)=>{
         return (
-        <Col className="col-4">
+        <Col className="col-4" key={libro.asin}>
             <Card>
             <Card.Img variant="top" src={libro.img} />
             <Card.Body>

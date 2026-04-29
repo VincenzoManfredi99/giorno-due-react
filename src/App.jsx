@@ -1,27 +1,33 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import MyNavbar from "./assets/components/navbar";
 import MyFooter from "./assets/components/footer";
-import { Container, Row, Col } from "react-bootstrap";
-import MyBooks from "./assets/components/AllTheBooks";
+import { Container } from "react-bootstrap";
+// Importa i dati dei libri
+import horrorBooks from "./assets/data/horror.json"; 
+
+import BookList from "./assets/components/BookList";
 
 function App() {
   return (
-    <>
-     <div className="d-flex flex-column min-vh-100">
-       <header>
-         <MyNavbar />
-       </header>
-       
-       <main className="flex-grow-1">
-         <Container>    
-             <MyBooks />
-         </Container>
-       </main>
-       <footer>
-         <MyFooter />
-       </footer>
-     </div>
-    </>
+    <div className="d-flex flex-column min-vh-100">
+      <header>
+        <MyNavbar />
+      </header>
+
+      <main className="flex-grow-1">
+        <Container>
+          {/* PASSAGGIO CHIAVE: 
+             Passiamo l'array horrorBooks al componente BookList 
+             tramite una prop che chiamiamo "books"
+          */}
+          <BookList books={horrorBooks} />
+        </Container>
+      </main>
+
+      <footer>
+        <MyFooter />
+      </footer>
+    </div>
   );
 }
 
