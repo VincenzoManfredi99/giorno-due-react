@@ -18,7 +18,6 @@ class BookList extends Component {
                 type="text"
                 placeholder="Esempio: The Witcher..."
                 value={this.state.searchQuery}
-                // Aggiorniamo lo stato mentre l'utente scrive
                 onChange={(e) => this.setState({ searchQuery: e.target.value })}
               />
             </Form.Group>
@@ -26,13 +25,12 @@ class BookList extends Component {
         </Row>
 
         <Row className="g-3">
-          {/* FILTRIAMO i libri prima di mapparli */}
+          {}
           {this.props.books
             .filter((b) => 
               b.title.toLowerCase().includes(this.state.searchQuery.toLowerCase())
             )
             .map((b) => (
-              // Passiamo ogni singolo libro al componente figlio come prop
               <SingleBook key={b.asin} libro={b} />
             ))
           }

@@ -1,5 +1,3 @@
-
-
 function MyFooter() {
     return (
         <>

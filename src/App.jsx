@@ -16,10 +16,7 @@ function App() {
 
       <main className="flex-grow-1">
         <Container>
-          {/* PASSAGGIO CHIAVE: 
-             Passiamo l'array horrorBooks al componente BookList 
-             tramite una prop che chiamiamo "books"
-          */}
+          {}
           <BookList books={horrorBooks} />
         </Container>
       </main>
